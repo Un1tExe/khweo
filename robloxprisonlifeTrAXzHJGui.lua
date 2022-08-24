@@ -1283,11 +1283,16 @@ end
 dragify(Frame)
 hud = LocalPlayer.PlayerGui.Home.hud
 GunFrame = hud.GunFrame
+AddedGui = hud.AddedGui
+mousehover = AddedGui.mousehover
+tooltip = AddedGui.tooltip
 GunFrame.Frame.TextLabel:Destroy()
 GunFrame.Frame.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
 GunFrame.Label.BackgroundColor3 = CoolColor
 GunFrame.BackgroundColor3 = CoolColor
 GunFrame.Frame.BackgroundColor3 = Color3.fromRGB(0,0,0)
+tooltip.BackgroundColor3 = CoolColor
+mousehover.BackgroundColor3 = CoolColor
 
 hud.StaminaFrame.BackgroundColor3 = CoolColor
 for i,v2 in next, {hud.Topbar.titleBar, hud.Topbar.Pulldownmenu, hud.Topbar.Pulldownmenu.tb, hud.ClockFrame,hud.MenuButton, hud.MenuButton.MenuFrame.respawn, hud.MenuButton.MenuFrame.votekick, hud.MenuButton.MenuFrame.gamepasses} do
