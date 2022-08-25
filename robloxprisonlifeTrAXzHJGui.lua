@@ -23,6 +23,7 @@ local CoreGui = game:GetService("StarterGui")
 CoreGui:SetCore("SendNotification", {
 	Title = "TrAXzHJ Gui Loaded";
 	Text = "v 0.6";
+end
 
 Green = Color3.fromRGB(0,255,0)
 CoolColor = Color3.fromRGB(33,33,33)
