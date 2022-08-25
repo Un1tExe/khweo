@@ -11,20 +11,6 @@ Press 'Z' to Disable Chat
 Press 'X' to Disable Bubble Chat]]
 
 
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local Workspace = game:GetService("Workspace")
-local CoolColor = Color3.fromRGB(33, 33, 33)
-FavoriteColor = Color3.fromRGB(81, 81, 81)
-local function GetPos()
-	print(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
-end
-local CoreGui = game:GetService("StarterGui")
-CoreGui:SetCore("SendNotification", {
-	Title = "TrAXzHJ Gui Loaded";
-	Text = "v 0.6";
-end
-
 Green = Color3.fromRGB(0,255,0)
 CoolColor = Color3.fromRGB(33,33,33)
 colorxd = Color3.fromRGB(50,50,50)
