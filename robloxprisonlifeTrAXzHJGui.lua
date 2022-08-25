@@ -11,33 +11,18 @@ Press 'Z' to Disable Chat
 Press 'X' to Disable Bubble Chat]]
 
 
-Green = Color3.fromRGB(0,255,0)
-CoolColor = Color3.fromRGB(33,33,33)
-colorxd = Color3.fromRGB(50,50,50)
-Home = script.Parent
-hud = Home.hud
-intro = Home.intro
-hud.GunFrame.Frame.TextLabel:Destroy()
-for i,v2 in next, {hud.Topbar.titleBar, hud.Topbar.Pulldownmenu, hud.Topbar.Pulldownmenu.tb, hud.ClockFrame,hud.MenuButton, hud.MenuButton.MenuFrame.respawn, hud.MenuButton.MenuFrame.votekick, hud.MenuButton.MenuFrame,hud.MenuButton.MenuFrame.gamepasses,hud.StaminaFrame,hud.GunFrame,hud.GunFrame,hud.GunFrame.Frame,hud.AddedGui.mousehover,hud.AddedGui.tooltip,hud.CameraFrame,hud.CameraFrame.Frame} do
-    v2.BackgroundColor3 = CoolColor
-    v2.BorderColor3 = CoolColor
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Workspace = game:GetService("Workspace")
+local CoolColor = Color3.fromRGB(33, 33, 33)
+FavoriteColor = Color3.fromRGB(81, 81, 81)
+local function GetPos()
+	print(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 end
-hud.MenuButton.MenuFrame.respawn.TextColor3 = Green
-hud.Topbar.Pulldownmenu.Frame.Description.TextColor3 = Color3.fromRGB(214, 214, 214)
-for i,v2 in next,{intro.NoticeFrame,intro.okFrame} do
-    v2.BackgroundColor3 = CoolColor
-    v2.BorderColor3 = CoolColor
-end
-for i,v2 in next,{intro.okFrame.Frame,intro.NoticeFrame.tb1,intro.NoticeFrame.tb2,intro.okFrame.tb1,intro.Content.Buttons.help,intro.Content.Buttons.teamsGui,intro.Content.menus.premium.riot} do
-    v2.BackgroundColor3 = colorxd
-    v2.BorderColor3 = colorxd
-end
-intro.NoticeFrame.Frame.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
-intro.NoticeFrame.Frame.BorderColor3 = Color3.fromRGB(150, 150, 150)
-intro.Content.Buttons.premium.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
-intro.Content.Buttons.premium.BorderColor3 = Color3.fromRGB(150, 150, 150)
-intro.Content.menus.premium.TextLabel.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
-intro.Content.menus.premium.TextLabel.BorderColor3 = Color3.fromRGB(150, 150, 150)
+local CoreGui = game:GetService("StarterGui")
+CoreGui:SetCore("SendNotification", {
+	Title = "TrAXzHJ Gui Loaded";
+	Text = "v 0.6";
 })
 
 local function getGuns()
