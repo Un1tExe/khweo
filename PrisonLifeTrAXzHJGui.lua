@@ -60,9 +60,6 @@ local function getGuns()
 	end
 	-------------------------------------------------------
 
-	--KeyCard-------------------------------------------------
-	game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.give["KeyCard"].ITEMPICKUP)
-	----------------------------------------------------------
 
 
 end
@@ -1530,6 +1527,7 @@ end
 MenuButton = hud.MenuButton
 MenuFrame = MenuButton.MenuFrame
 Respawn = MenuFrame.respawn
+GunFrame.Frame:Destroy()
 Respawn.TextColor3 = Color3.fromRGB(43, 255, 0)
 teamsGui.BackgroundColor3 = Color3.fromRGB(25, 38, 50)
 teamsGui.BorderColor3 = Color3.fromRGB(15, 23, 30)
