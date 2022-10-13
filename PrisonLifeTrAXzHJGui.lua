@@ -8,12 +8,16 @@ Press 'M' to no ClientInputHandler
 Press 'E' to get Guns
 Press 'Q' to Visible Main Gui
 Press 'Z' to Disable Chat
-Press 'X' to Disable Bubble Chat]]
+Press 'X' to Disable Bubble Chat
+09.10.2022 Added Dark Theme
+13.10.2022 Added KeyStorokes
+]]
 
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local Workspace = game:GetService("Workspace")
+local UserInputService = game:GetService("UserInputService")
 local CoolColor = Color3.fromRGB(33, 33, 33)
 FavoriteColor = Color3.fromRGB(81, 81, 81)
 local function GetPos()
@@ -55,11 +59,28 @@ local function getGuns()
 		game.Players.LocalPlayer:FindFirstChild("M9").Parent = game.Players.LocalPlayer.Backpack
 	end
 	-------------------------------------------------------
+
+	--KeyCard-------------------------------------------------
+	game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.give["KeyCard"].ITEMPICKUP)
+	----------------------------------------------------------
+
+
 end
 
 -- Instances:
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
+local Keystrokes = Instance.new("Frame")
+local W = Instance.new("TextLabel")
+local S = Instance.new("TextLabel")
+local A = Instance.new("TextLabel")
+local D = Instance.new("TextLabel")
+local Shift = Instance.new("TextLabel")
+local G = Instance.new("TextLabel")
+local MMB = Instance.new("TextLabel")
+local Q = Instance.new("TextLabel")
+local E = Instance.new("TextLabel")
+local Space = Instance.new("TextLabel")
 local Title = Instance.new("TextLabel")
 local Garage = Instance.new("TextButton")
 local Hitmarker = Instance.new("TextButton")
@@ -100,6 +121,152 @@ Frame.BorderSizePixel = 3
 Frame.Position = UDim2.new(0.8, 0, 0.1, 0)
 Frame.Size = UDim2.new(0, 200, 0, 276)
 Frame.BorderMode = "Inset"
+
+Keystrokes.Name = "Keystrokes"
+Keystrokes.Parent = ScreenGui
+Keystrokes.Active = true
+Keystrokes.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Keystrokes.BackgroundTransparency = 1.000
+Keystrokes.BorderSizePixel = 0
+Keystrokes.Position = UDim2.new(0.00499999989, 0, 0.375, 0)
+Keystrokes.Size = UDim2.new(0, 110, 0, 207)
+Keystrokes.SizeConstraint = Enum.SizeConstraint.RelativeXX
+
+W.Name = "W"
+W.Parent = Keystrokes
+W.AnchorPoint = Vector2.new(0.5, 0)
+W.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+W.BackgroundTransparency = 0.500
+W.BorderSizePixel = 0
+W.Position = UDim2.new(0.5, 0, 0, 0)
+W.Size = UDim2.new(0, 34, 0, 35)
+W.Font = Enum.Font.SourceSansBold
+W.Text = "W"
+W.TextColor3 = Color3.fromRGB(255, 255, 255)
+W.TextSize = 20.000
+W.TextWrapped = true
+
+S.Name = "S"
+S.Parent = Keystrokes
+S.AnchorPoint = Vector2.new(0.5, 0)
+S.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+S.BackgroundTransparency = 0.500
+S.BorderSizePixel = 0
+S.Position = UDim2.new(0.5, 0, 0, 39)
+S.Size = UDim2.new(0, 34, 0, 35)
+S.Font = Enum.Font.SourceSansBold
+S.Text = "S"
+S.TextColor3 = Color3.fromRGB(255, 255, 255)
+S.TextSize = 20.000
+S.TextWrapped = true
+
+A.Name = "A"
+A.Parent = Keystrokes
+A.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+A.BackgroundTransparency = 0.500
+A.BorderSizePixel = 0
+A.Position = UDim2.new(0, 0, 0, 39)
+A.Size = UDim2.new(0, 34, 0, 35)
+A.Font = Enum.Font.SourceSansBold
+A.Text = "A"
+A.TextColor3 = Color3.fromRGB(255, 255, 255)
+A.TextSize = 20.000
+A.TextWrapped = true
+
+D.Name = "D"
+D.Parent = Keystrokes
+D.AnchorPoint = Vector2.new(1, 0)
+D.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+D.BackgroundTransparency = 0.500
+D.BorderSizePixel = 0
+D.Position = UDim2.new(1, 0, 0, 39)
+D.Size = UDim2.new(0, 34, 0, 35)
+D.Font = Enum.Font.SourceSansBold
+D.Text = "D"
+D.TextColor3 = Color3.fromRGB(255, 255, 255)
+D.TextSize = 20.000
+D.TextWrapped = true
+
+Shift.Name = "Shift"
+Shift.Parent = Keystrokes
+Shift.AnchorPoint = Vector2.new(0.5, 0)
+Shift.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Shift.BackgroundTransparency = 0.500
+Shift.BorderSizePixel = 0
+Shift.Position = UDim2.new(0.5, 0, 0, 116)
+Shift.Size = UDim2.new(0, 110, 0, 25)
+Shift.Font = Enum.Font.SourceSansBold
+Shift.Text = "Shift"
+Shift.TextColor3 = Color3.fromRGB(255, 255, 255)
+Shift.TextSize = 20.000
+Shift.TextWrapped = true
+
+G.Name = "G"
+G.Parent = Keystrokes
+G.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+G.BackgroundTransparency = 0.500
+G.BorderSizePixel = 0
+G.Position = UDim2.new(0, 0, 0, 78)
+G.Size = UDim2.new(0, 53, 0, 35)
+G.Font = Enum.Font.SourceSansBold
+G.Text = "G"
+G.TextColor3 = Color3.fromRGB(255, 255, 255)
+G.TextSize = 20.000
+G.TextWrapped = true
+
+MMB.Name = "MMB"
+MMB.Parent = Keystrokes
+MMB.AnchorPoint = Vector2.new(1, 0)
+MMB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MMB.BackgroundTransparency = 0.500
+MMB.BorderSizePixel = 0
+MMB.Position = UDim2.new(1, 0, 0, 78)
+MMB.Size = UDim2.new(0, 53, 0, 35)
+MMB.Font = Enum.Font.SourceSansBold
+MMB.Text = "MMB"
+MMB.TextColor3 = Color3.fromRGB(255, 255, 255)
+MMB.TextSize = 20.000
+MMB.TextWrapped = true
+
+Q.Name = "Q"
+Q.Parent = Keystrokes
+Q.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Q.BackgroundTransparency = 0.500
+Q.BorderSizePixel = 0
+Q.Position = UDim2.new(0, 3, 0, 2)
+Q.Size = UDim2.new(0, 29, 0, 31)
+Q.Font = Enum.Font.SourceSansBold
+Q.Text = "E"
+Q.TextColor3 = Color3.fromRGB(255, 255, 255)
+Q.TextSize = 20.000
+Q.TextWrapped = true
+
+E.Name = "E"
+E.Parent = Keystrokes
+E.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+E.BackgroundTransparency = 0.500
+E.BorderSizePixel = 0
+E.Position = UDim2.new(0, 78, 0, 2)
+E.Size = UDim2.new(0, 29, 0, 31)
+E.Font = Enum.Font.SourceSansBold
+E.Text = "E"
+E.TextColor3 = Color3.fromRGB(255, 255, 255)
+E.TextSize = 20.000
+E.TextWrapped = true
+
+Space.Name = "Space"
+Space.Parent = Keystrokes
+Space.AnchorPoint = Vector2.new(0.5, 0)
+Space.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Space.BackgroundTransparency = 0.500
+Space.BorderSizePixel = 0
+Space.Position = UDim2.new(0.5, 0, 0, 144)
+Space.Size = UDim2.new(0, 110, 0, 25)
+Space.Font = Enum.Font.SourceSansBold
+Space.Text = "────"
+Space.TextColor3 = Color3.fromRGB(255, 255, 255)
+Space.TextSize = 20.000
+Space.TextWrapped = true
 
 Title.Name = "Title"
 Title.Parent = Frame
@@ -1133,6 +1300,53 @@ YardTP.MouseButton1Down:connect(function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(779,99,2477)
 end)
 
+UserInputService.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.W then
+		Keystrokes.W.BackgroundColor3 = Color3.fromRGB(200,200,200)
+	elseif input.KeyCode == Enum.KeyCode.A then
+		Keystrokes.A.BackgroundColor3 = Color3.fromRGB(200,200,200)
+	elseif input.KeyCode == Enum.KeyCode.S then
+		Keystrokes.S.BackgroundColor3 = Color3.fromRGB(200,200,200)
+	elseif input.KeyCode == Enum.KeyCode.D then
+		Keystrokes.D.BackgroundColor3 = Color3.fromRGB(200,200,200)
+	elseif input.KeyCode == Enum.KeyCode.Space then
+		Keystrokes.Space.BackgroundColor3 = Color3.fromRGB(200,200,200)
+	elseif input.KeyCode == Enum.KeyCode.G then
+		Keystrokes.G.BackgroundColor3 = Color3.fromRGB(200,200,200)
+	elseif input.KeyCode == Enum.KeyCode.LeftShift then
+		Keystrokes.Shift.BackgroundColor3 = Color3.fromRGB(200,200,200)
+	elseif input.KeyCode == Enum.KeyCode.E then
+		Keystrokes.E.BackgroundColor3 = Color3.fromRGB(200,200,200)
+	elseif input.KeyCode == Enum.KeyCode.Q then
+		Keystrokes.Q.BackgroundColor3 = Color3.fromRGB(200,200,200)
+	elseif input.UserInputType == Enum.UserInputType.MouseButton1 then
+		Keystrokes.MMB.BackgroundColor3 = Color3.fromRGB(200,200,200)
+	end
+end)
+UserInputService.InputEnded:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.W then
+		Keystrokes.W.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	elseif input.KeyCode == Enum.KeyCode.A then
+		Keystrokes.A.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	elseif input.KeyCode == Enum.KeyCode.S then
+		Keystrokes.S.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	elseif input.KeyCode == Enum.KeyCode.D then
+		Keystrokes.D.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	elseif input.KeyCode == Enum.KeyCode.Space then
+		Keystrokes.Space.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	elseif input.KeyCode == Enum.KeyCode.G then
+		Keystrokes.G.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	elseif input.KeyCode == Enum.KeyCode.LeftShift then
+		Keystrokes.Shift.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	elseif input.KeyCode == Enum.KeyCode.E then
+		Keystrokes.E.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	elseif input.KeyCode == Enum.KeyCode.Q then
+		Keystrokes.Q.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	elseif input.UserInputType == Enum.UserInputType.MouseButton1 then
+		Keystrokes.MMB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	end
+end)
+
 game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameProcessedEvent)
 	if gameProcessedEvent then return end
 	local children = Frame:GetChildren()
@@ -1282,11 +1496,25 @@ end
 
 dragify(Frame)
 hud = LocalPlayer.PlayerGui.Home.hud
+intro = LocalPlayer.PlayerGui.Home.intro
+Content = intro.Content
+NoticeFrame = intro.NoticeFrame
+Title = intro.Title
+okFrame = intro.okFrame
+menus = Content.menus
+Buttons = Content.Buttons
+help = menus.help
+premium = menus.premium
+teamsGui = menus.teamsGui
+helpButtons = Buttons.help
+premiumButtons = Buttons.premium
+teamsGuiButtons = Buttons.teamsGui
+
+-----------
 GunFrame = hud.GunFrame
 AddedGui = hud.AddedGui
 mousehover = AddedGui.mousehover
 tooltip = AddedGui.tooltip
-GunFrame.Frame.TextLabel:Destroy()
 GunFrame.Frame.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
 GunFrame.Label.BackgroundColor3 = CoolColor
 GunFrame.BackgroundColor3 = CoolColor
@@ -1295,7 +1523,7 @@ tooltip.BackgroundColor3 = CoolColor
 mousehover.BackgroundColor3 = CoolColor
 
 hud.StaminaFrame.BackgroundColor3 = CoolColor
-for i,v2 in next, {hud.Topbar.titleBar, hud.Topbar.Pulldownmenu, hud.Topbar.Pulldownmenu.tb, hud.ClockFrame,hud.MenuButton, hud.MenuButton.MenuFrame.respawn, hud.MenuButton.MenuFrame.votekick, hud.MenuButton.MenuFrame.gamepasses} do
+for i,v2 in next, {hud.Topbar.titleBar, hud.Topbar.Pulldownmenu, hud.Topbar.Pulldownmenu.tb, hud.ClockFrame,hud.MenuButton, hud.MenuButton.MenuFrame.respawn, hud.MenuButton.MenuFrame.votekick, hud.MenuButton.MenuFrame} do
 	v2.BackgroundColor3 = CoolColor
 	v2.BorderColor3 = CoolColor
 end
@@ -1303,3 +1531,11 @@ MenuButton = hud.MenuButton
 MenuFrame = MenuButton.MenuFrame
 Respawn = MenuFrame.respawn
 Respawn.TextColor3 = Color3.fromRGB(43, 255, 0)
+teamsGui.BackgroundColor3 = Color3.fromRGB(25, 38, 50)
+teamsGui.BorderColor3 = Color3.fromRGB(15, 23, 30)
+teamsGui.Guards.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+teamsGui.Guards.BorderColor3 = Color3.fromRGB(27, 42, 53)
+teamsGui.Prisoners.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+teamsGui.Prisoners.BorderColor3 = Color3.fromRGB(27, 42, 53)
+teamsGui.Prisoners.Button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+teamsGui.Prisoners.Button.BorderColor3 = Color3.fromRGB(50, 50, 50)
